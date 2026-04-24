@@ -6,6 +6,8 @@ project(<PROJECT_NAME> VERSION 0.0.0 LANGUAGES C CXX)
 
 # Always use the newest C++ standard on green-field projects if possible.
 set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Download the dependencies to the same folder as the project.
 # If you want to install them system wide, set CPM_SOURCE_CACHE with the path to the dependencies
@@ -36,22 +38,21 @@ CPMAddPackage(
         "gtest_force_shared_crt ON"
 )
 
-# Worry not, JUCE's PRODUCT_NAME can have spaces (and is what DAWs will display)
-# You can also just have it be the same thing as PROJECT_NAME
-# You may want to append the major version on the end of this (and PROJECT_NAME) ala:
+# JUCE's PRODUCT_NAME can have spaces and is what DAWs display.
+# You may want to append the major version on the end of this:
 #   set(PRODUCT_NAME "${PROJECT_NAME}_v${MAJOR_VERSION}")
-# Doing so enables major versions to show up in IDEs and DAWs as separate plugins
-# allowing you to change parameters and behavior without breaking existing user projects
+# Doing so lets major versions show up in IDEs and DAWs as separate plugins,
+# allowing parameter or behavior changes without breaking existing user projects.
 set(PRODUCT_NAME "<PROJECT_NAME>_v1")
 
 # Product name without version
-set(PRODUCT_NAME_WITHOUT_VERSION "Satanizer")
+set(PRODUCT_NAME_WITHOUT_VERSION "<PROJECT_NAME>")
 
-# Change me! Used for the MacOS bundle name and Installers
-set(COMPANY_NAME "NeuroTone")
+# Used for the macOS bundle name and installers.
+set(COMPANY_NAME "MetalDSP")
 
-# Change me! Used for the MacOS bundle identifier (and signing)
-set(BUNDLE_ID "com.metaldsp.<PROJECT_NAME>")
+# Used for the macOS bundle identifier and signing.
+set(BUNDLE_ID "com.metaldsp.<PROJECT_SLUG>")
 
 # Change me! Set the plugin formats you want built
 # Valid choices: AAX Unity VST VST3 AU AUv3 Standalone

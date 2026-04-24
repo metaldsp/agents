@@ -144,8 +144,7 @@ void PluginProcessor::processBlock(juce::AudioBuffer<float> &buffer,
 }
 
 bool PluginProcessor::hasEditor() const {
-  // TODO: Return true as soon as the editor is implemented
-  return false;
+  return true;
 }
 
 juce::AudioProcessorEditor *PluginProcessor::createEditor() {
@@ -172,6 +171,7 @@ void PluginProcessor::parameterChanged(const juce::String &parameterID,
                                        float newValue) {
   if (parameterID == AudioPlugin::PluginParameters::parameterID) {
     // TODO: Handle parameter(s)
+    juce::ignoreUnused(newValue);
   }
 }
 

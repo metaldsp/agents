@@ -1,6 +1,6 @@
 interface:
   display_name: "JUCE Scaffolder"
-  short_description: "Create JUCE plugin project templates"
-  default_prompt: "Use $juce-scaffolder to create a new JUCE plugin project in the current workspace."
+  short_description: "Scaffold JUCE audio plugin projects"
+  default_prompt: "Use $juce-scaffolder to scaffold a JUCE audio plugin project in the current workspace."
 policy:
   allow_implicit_invocation: true

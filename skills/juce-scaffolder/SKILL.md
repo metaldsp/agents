@@ -1,7 +1,6 @@
 ---
 name: juce-scaffolder
-description: Create a new JUCE audio plugin project in the current workspace from the bundled assets template. Use when the user asks to scaffold, generate, or create a JUCE plugin.
-argument-hint: "[projectName] [projectDescription]"
+description: Scaffold a new JUCE audio plugin project from a bundled CMake/JUCE template. Use when the user asks to create, generate, bootstrap, or scaffold a JUCE plugin, audio plugin, VST3/AU/Standalone plugin, or MetalDSP-style JUCE project in the current workspace.
 metadata:
   author: Pier Luigi Fiorini
   license: MIT
@@ -22,20 +21,30 @@ inputs:
 
 # JUCE Scaffolder
 
-Create a JUCE plugin project in the current workspace from bundled `assets/`.
+Scaffold a JUCE plugin project in the current workspace from bundled `assets/`.
 
 ## Inputs
 
-- `projectName`: required; replaces `<PROJECT_NAME>` and is the CMake project name.
-- `projectDescription`: required; replaces `<PROJECT_DESCRIPTION>` in `README.md`.
+- `projectName`: required CMake project name; should be short and identifier-like, for example `MyPlugin`.
+- `projectDescription`: required README description.
 
 If either value is missing, ask for it. Do not guess.
 
 ## Workflow
 
 1. Treat the current workspace as the target directory.
-2. If any generated path already exists, stop and report conflicts unless overwrite was explicitly requested.
-3. Copy all files from bundled `assets/`, including dotfiles, preserving layout.
-4. In generated text files, replace `<PROJECT_NAME>` and `<PROJECT_DESCRIPTION>`.
-5. Update `LICENSE.md` and generated `.cpp`/`.h` copyright years to the current year.
-6. Make no other template edits unless requested.
+2. Resolve the skill directory from this `SKILL.md`.
+3. Run the bundled scaffold script:
+
+   ```bash
+   python3 <skill-dir>/scripts/scaffold.py --target . --name "<projectName>" --description "<projectDescription>"
+   ```
+
+4. If the script reports path conflicts, stop and show the conflicting paths. Re-run with `--overwrite` only when the user explicitly requested replacing existing files.
+5. Make no other generated-template edits unless requested.
+
+## Script Behavior
+
+`scripts/scaffold.py` copies every file from `assets/`, including dotfiles, preserves binary assets, replaces placeholders in UTF-8 text files, derives a lowercase bundle slug from `projectName`, and updates copyright years to the current year.
+
+Use the script instead of manually copying files unless you are debugging or modifying the skill itself.

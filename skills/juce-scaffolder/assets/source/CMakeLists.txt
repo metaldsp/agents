@@ -8,7 +8,7 @@ juce_add_plugin(${PROJECT_NAME}
     BUNDLE_ID "${BUNDLE_ID}"
     PLUGIN_MANUFACTURER_CODE "${MANUFACTURER_CODE}"
     PLUGIN_CODE "${PLUGIN_CODE}"
-    FORMATS "${FORMATS}"
+    FORMATS ${FORMATS}
 
     # The name of your final executable
     # This is how it's listed in the DAW
@@ -21,7 +21,7 @@ juce_add_plugin(${PROJECT_NAME}
     NEEDS_MIDI_INPUT FALSE
     NEEDS_MIDI_OUTPUT FALSE
 
-    # On MacOS, plugin is copied to ~/Users/yourname/Library/Audio/Plug-Ins/
+    # On macOS, plugins are copied to ~/Library/Audio/Plug-Ins/.
     COPY_PLUGIN_AFTER_BUILD TRUE
 )
 

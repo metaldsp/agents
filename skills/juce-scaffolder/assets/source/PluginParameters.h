@@ -9,25 +9,26 @@
 
 namespace AudioPlugin {
 
-class PluginParameters {
+class PluginParameters
+{
 public:
-  /*
+    /*
    * Parameter IDs
    */
 
-  static constexpr const char *parameterID = "parameter";
+    static constexpr const char *parameterID = "parameter";
 
-  /*
+    /*
    * Parameter names
    */
 
-  static constexpr const char *parameterName = "Parameter";
+    static constexpr const char *parameterName = "Parameter";
 
-  /*
+    /*
    * Default values
    */
 
-  static constexpr float parameterDefault = 0.0f;
+    static constexpr float parameterDefault = 0.0f;
 };
 
 } // namespace AudioPlugin

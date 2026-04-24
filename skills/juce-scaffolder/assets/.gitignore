@@ -438,3 +438,6 @@ FodyWeavers.xsd
 
 # AI Agents
 .codex
+
+# macOS
+.DS_Store

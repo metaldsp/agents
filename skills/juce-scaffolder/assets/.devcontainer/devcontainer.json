@@ -1,0 +1,25 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/rapidsai/devcontainers/features/cmake": {},
+        "ghcr.io/devcontainers/features/copilot-cli:latest": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools-extension-pack",
+                "ms-vscode.cmake-tools",
+                "xaver.clang-format",
+                "Anthropic.claude-code",
+                "openai.chatgpt"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash"
+            }
+        }
+    }
+}

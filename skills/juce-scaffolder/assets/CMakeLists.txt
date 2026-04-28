@@ -72,9 +72,6 @@ enable_testing()
 # Add the assets.
 add_subdirectory(assets)
 
-# Add the metaldsp shared library modules.
-# add_subdirectory(modules/metaldsp)
-
 # Add the plugin source code.
 add_subdirectory(source)
 

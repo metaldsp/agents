@@ -201,8 +201,8 @@ juce::AudioProcessorValueTreeState::ParameterLayout PluginProcessor::createParam
 {
     /*
       The skew factor controls the mapping curve between normalized (0-1) and
-     actual parameter values It creates non-linear parameter response for more
-     natural control
+      actual parameter values It creates non-linear parameter response for more
+      natural control
 
       * Skew factor > 1.0: Values bunch up toward the lower end
       * Skew factor < 1.0: Values bunch up toward the higher end
@@ -223,7 +223,7 @@ juce::AudioProcessorValueTreeState::ParameterLayout PluginProcessor::createParam
       * Frequency: ~0.2-0.5
       * Time parameters: ~0.5-0.8
       * Linear parameters: 1.0
-  */
+    */
 
     juce::AudioProcessorValueTreeState::ParameterLayout layout;
 

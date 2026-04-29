@@ -5,6 +5,9 @@
     "C_Cpp.autoAddFileAssociations": false,
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
+    "files.insertFinalNewline": true,
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
     "files.problemExclude": {
         "**/build/*": true,
         "**/libs/*": true
@@ -25,7 +28,7 @@
             "file": ".github/instructions/commit.instructions.md"
         }
     ],
-    "chat.useAgentsMdFile": true,
+    "chat.useAgentsMdFile": false,
     "[cpp]": {
       "editor.defaultFormatter": "xaver.clang-format"
     }

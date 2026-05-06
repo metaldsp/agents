@@ -26,7 +26,10 @@ PluginProcessor::PluginProcessor()
     m_parameters.addParameterListener(PluginParameters::parameterID, this);
 }
 
-PluginProcessor::~PluginProcessor() {}
+PluginProcessor::~PluginProcessor()
+{
+    m_parameters.removeParameterListener(PluginParameters::parameterID, this);
+}
 
 const juce::String PluginProcessor::getName() const
 {

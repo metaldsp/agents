@@ -1,7 +1,7 @@
 # Mandatory line, sets the minimum version of CMake that should be used with this repository.
 cmake_minimum_required(VERSION 3.22)
 
-# Project name and version
+# Project name and version. These placeholders are rendered by the scaffolder.
 project(<PROJECT_NAME> VERSION 0.0.0 LANGUAGES C CXX)
 
 # Always use the newest C++ standard on green-field projects if possible.
@@ -20,8 +20,8 @@ include(cmake/cpm.cmake)
 # Add JUCE.
 CPMAddPackage(
     NAME JUCE
-    GIT_TAG 8.0.12
-    VERSION 8.0.12
+    GIT_TAG 8.0.15
+    VERSION 8.0.15
     GITHUB_REPOSITORY juce-framework/JUCE
     SOURCE_DIR ${LIB_DIR}/juce
 )
@@ -62,15 +62,15 @@ set(FORMATS Standalone AU VST3 AUv3)
 # Note: first character MUST be uppercase for AU formats
 set(MANUFACTURER_CODE MDSP)
 
-# A unique four-character plugin id
-# Note: this must have at least one upper-case character
-set(PLUGIN_CODE CODE)
+# A unique four-character plugin id supplied when scaffolding.
+# Note: it must contain at least one upper-case character.
+set(PLUGIN_CODE <PLUGIN_CODE>)
 
 # This command allows running tests from the "build" folder (the one where CMake generates the project to).
 enable_testing()
 
-# Add the assets.
-add_subdirectory(assets)
+# Add binary assets after populating assets/CMakeLists.txt.
+# add_subdirectory(assets)
 
 # Add the plugin source code.
 add_subdirectory(source)

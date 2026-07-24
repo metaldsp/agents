@@ -23,12 +23,7 @@
         "**/libs": true,
         "**/.cache": true
     },
-    "github.copilot.chat.commitMessageGeneration.instructions": [
-        {
-            "file": ".github/instructions/commit.instructions.md"
-        }
-    ],
-    "chat.useAgentsMdFile": false,
+    "chat.useAgentsMdFile": true,
     "[cpp]": {
       "editor.defaultFormatter": "xaver.clang-format"
     }

@@ -1,0 +1,32 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "<PROJECT_NAME> Standalone (macOS)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/source/<PROJECT_NAME>_artefacts/Debug/Standalone/<PROJECT_NAME>_v1.app/Contents/MacOS/<PROJECT_NAME>_v1",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "MIMode": "lldb"
+        },
+        {
+            "name": "<PROJECT_NAME> Standalone (Windows)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/source/<PROJECT_NAME>_artefacts/Debug/Standalone/<PROJECT_NAME>_v1.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb"
+        },
+        {
+            "name": "<PROJECT_NAME> Standalone (Linux)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/source/<PROJECT_NAME>_artefacts/Debug/Standalone/<PROJECT_NAME>_v1",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "MIMode": "gdb"
+        }
+    ]
+}

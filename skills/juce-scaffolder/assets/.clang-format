@@ -111,6 +111,7 @@ SpacesInContainerLiterals: false
 SpacesInCStyleCastParentheses: false
 SpacesInParentheses: false
 SpacesInSquareBrackets: false
-Standard: c++17
+# clang-format uses C++20 as its latest portable parser mode; project compilation uses C++23.
+Standard: c++20
 TabWidth:        4
 UseTab:          Never

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Dev Loop"
+  short_description: "Spec-driven implement/test/judge loop"
+  default_prompt: "Use $dev-loop to implement <task> with an independent test-writer and judge."
+policy:
+  allow_implicit_invocation: false

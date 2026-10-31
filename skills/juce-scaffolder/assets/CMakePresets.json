@@ -1,0 +1,95 @@
+{
+    "version": 5,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 22,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "Clang",
+            "generator": "Ninja",
+            "binaryDir": "build",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++"
+            }
+        },
+        {
+            "name": "GCC",
+            "generator": "Ninja",
+            "binaryDir": "build",
+            "cacheVariables": {
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_C_COMPILER": "gcc",
+                "CMAKE_CXX_COMPILER": "g++"
+            }
+        },
+        {
+            "name": "Release",
+            "generator": "Ninja",
+            "binaryDir": "release-build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        },
+        {
+            "name": "Visual Studio",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "vs-build"
+        },
+        {
+            "name": "Xcode",
+            "generator": "Xcode",
+            "binaryDir": "xcode-build"
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "Clang",
+            "configurePreset": "Clang"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "Default",
+            "hidden": true,
+            "output": {
+                "outputOnFailure": true
+            },
+            "execution": {
+                "noTestsAction": "error",
+                "stopOnFailure": false
+            }
+        },
+        {
+            "name": "Clang",
+            "inherits": "Default",
+            "configurePreset": "Clang"
+        },
+        {
+            "name": "GCC",
+            "inherits": "Default",
+            "configurePreset": "GCC"
+        },
+        {
+            "name": "Release",
+            "inherits": "Default",
+            "configurePreset": "Release"
+        },
+        {
+            "name": "Visual Studio",
+            "inherits": "Default",
+            "configurePreset": "Visual Studio"
+        },
+        {
+            "name": "Xcode",
+            "inherits": "Default",
+            "configurePreset": "Xcode",
+            "configuration": "Debug"
+        }
+    ]
+}

@@ -55,9 +55,13 @@ If any value is missing, ask for it. Do not guess a plugin code.
 
 ## Script Behavior
 
-`scripts/scaffold.py` copies every file from `assets/`, including dotfiles, preserves binary assets,
+`scripts/scaffold.py` copies every file from `assets/`, including dotfiles, recreates symlinks such as
+`.claude/skills` -> `../.agents/skills`, preserves binary assets,
 replaces placeholders in UTF-8 text files, derives a lowercase bundle slug from `projectName`,
 validates the plugin code and description, rejects targets inside the skill directory, and updates
-copyright years to the current year.
+copyright years to the current year, including SPDX notices. Generated projects use REUSE:
+code carries `LicenseRef-Proprietary`, CMake and configuration files use `CC0-1.0`, and the bundled
+git-commit, juce-dsp, and juce-ui skills use MIT. License texts are in `LICENSES/`, with the proprietary
+text also provided as `LICENSE`. `REUSE.toml` covers JSON configuration and binary assets.
 
 Use the script instead of manually copying files unless you are debugging or modifying the skill itself.

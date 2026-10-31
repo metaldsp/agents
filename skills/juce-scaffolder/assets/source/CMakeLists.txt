@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: CC0-1.0
+
 # Add a plugin target.
 juce_add_plugin(${PROJECT_NAME}
     # Icons for the standalone app

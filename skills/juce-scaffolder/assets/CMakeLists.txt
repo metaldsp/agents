@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: CC0-1.0
+
 # Mandatory line, sets the minimum version of CMake that should be used with this repository.
 cmake_minimum_required(VERSION 3.22)
 
@@ -20,8 +23,8 @@ include(cmake/cpm.cmake)
 # Add JUCE.
 CPMAddPackage(
     NAME JUCE
-    GIT_TAG 8.0.15
-    VERSION 8.0.15
+    GIT_TAG 9.0.4
+    VERSION 9.0.4
     GITHUB_REPOSITORY juce-framework/JUCE
     SOURCE_DIR ${LIB_DIR}/juce
 )

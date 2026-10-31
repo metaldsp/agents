@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: CC0-1.0
+
 # Build and dependency directories
 libs/
 build/
@@ -30,9 +33,11 @@ vs-build/
 *.sln.iml
 
 # Local tooling and OS files
+.cache/
 .codex/
 .claude/settings.local.json
 .claude/scheduled_tasks.lock
+.claude/worktrees/
 .DS_Store
 .history/
 __pycache__/

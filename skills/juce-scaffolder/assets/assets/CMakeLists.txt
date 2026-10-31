@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: CC0-1.0
+
 # Add assets.
 # juce_add_binary_data(Assets
 #     HEADER_NAME PluginAssets.h

@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: CC0-1.0
+
 set(TARGET_NAME "${PROJECT_NAME}Test")
 
 # Creates the test console application.

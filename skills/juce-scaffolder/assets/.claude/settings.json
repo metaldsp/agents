@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash .claude/hooks/clang-format.sh"
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/.agents/hooks/clang-format.py\""
           }
         ]
       }
@@ -14,7 +14,7 @@
   },
   "permissions": {
     "allow": [
-      "Bash(cmake --build build --config Debug --target <PROJECT_NAME>_v1)"
+      "Bash(cmake --build build --config Debug --target <PROJECT_NAME>)"
     ]
   }
 }

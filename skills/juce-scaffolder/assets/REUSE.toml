@@ -1,0 +1,32 @@
+version = 1
+
+[[annotations]]
+path = [
+    ".agents/skills/juce-dsp/SKILL.md",
+    ".agents/skills/juce-ui/SKILL.md",
+]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Pier Luigi Fiorini"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = [
+    ".claude/settings.json",
+    ".codex/hooks.json",
+    ".devcontainer/devcontainer.json",
+    ".vscode/launch.json",
+    ".vscode/settings.json",
+    "CMakePresets.json",
+    "skills-lock.json",
+]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Pier Luigi Fiorini"
+SPDX-License-Identifier = "CC0-1.0"
+
+[[annotations]]
+path = [
+    "packaging/icon.png",
+]
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 Pier Luigi Fiorini"
+SPDX-License-Identifier = "LicenseRef-Proprietary"

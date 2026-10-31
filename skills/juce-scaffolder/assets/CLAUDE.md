@@ -1,3 +1,8 @@
+<!--
+SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+SPDX-License-Identifier: LicenseRef-Proprietary
+-->
+
 ## About This Project
 
 A JUCE audio plugin using CMake and C++23. It builds cross-platform for Standalone, VST3, AU,
@@ -7,13 +12,13 @@ and AUv3 formats.
 
 ```sh
 # Configure (run once, or after CMakeLists.txt changes)
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug
+cmake --preset Clang
 
 # Build
-cmake --build build --config Debug
+cmake --build --preset Clang
 
 # Run tests
-ctest --test-dir build --verbose --output-on-failure
+ctest --preset Clang --verbose --output-on-failure
 
 # Standalone (macOS)
 ./build/source/<PROJECT_NAME>_artefacts/Debug/Standalone/<PROJECT_NAME>_v1.app
@@ -25,4 +30,4 @@ ctest --test-dir build --verbose --output-on-failure
 ./build/source/<PROJECT_NAME>_artefacts/Debug/Standalone/<PROJECT_NAME>_v1.exe
 ```
 
-For a universal macOS binary, configure with `-DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"`.
+For a universal macOS binary, configure with `cmake --preset Clang -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"`.

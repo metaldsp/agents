@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as _dt
+import os
 import re
 import shutil
 import sys
@@ -13,7 +14,7 @@ from pathlib import Path
 
 PROJECT_NAME_RE = re.compile(r"^[A-Za-z_][A-Za-z0-9_+-]*$")
 PLUGIN_CODE_RE = re.compile(r"^(?=.*[A-Z])[A-Za-z0-9]{4}$")
-COPYRIGHT_RE = re.compile(r"Copyright \(c\) \d{4} Pier Luigi Fiorini")
+COPYRIGHT_RE = re.compile(r"(Copyright \(c\)|SPDX-FileCopyrightText:) \d{4} Pier Luigi Fiorini")
 
 
 def bundle_slug(project_name: str) -> str:
@@ -43,7 +44,8 @@ def validate_plugin_code(plugin_code: str) -> None:
 
 
 def iter_files(root: Path) -> list[Path]:
-    return sorted(path for path in root.rglob("*") if path.is_file())
+    # Symlinks are kept as entries so they are recreated rather than followed.
+    return sorted(path for path in root.rglob("*") if path.is_file() or path.is_symlink())
 
 
 def render_text(
@@ -58,7 +60,7 @@ def render_text(
     }
     for old, new in replacements.items():
         text = text.replace(old, new)
-    return COPYRIGHT_RE.sub(f"Copyright (c) {year} Pier Luigi Fiorini", text)
+    return COPYRIGHT_RE.sub(lambda match: f"{match[1]} {year} Pier Luigi Fiorini", text)
 
 
 def copy_file(
@@ -92,7 +94,7 @@ def scaffold(
     assets_dir = skill_dir / "assets"
     files = iter_files(assets_dir)
     destinations = [target / src.relative_to(assets_dir) for src in files]
-    conflicts = [dst for dst in destinations if dst.exists()]
+    conflicts = [dst for dst in destinations if dst.exists() or dst.is_symlink()]
 
     if conflicts and not overwrite:
         return conflicts
@@ -102,6 +104,9 @@ def scaffold(
 
     for src, dst in zip(files, destinations):
         dst.parent.mkdir(parents=True, exist_ok=True)
+        if src.is_symlink():
+            dst.symlink_to(os.readlink(src))
+            continue
         copy_file(src, dst, project_name, project_description, plugin_code)
 
     return []

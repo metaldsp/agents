@@ -1,3 +1,6 @@
+# SPDX-FileCopyrightText: 2026 Pier Luigi Fiorini
+# SPDX-License-Identifier: CC0-1.0
+
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:1-ubuntu24.04
 
 # Install dependencies

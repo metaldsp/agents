@@ -6,6 +6,11 @@ metadata:
   author: Pier Luigi Fiorini
   license: MIT
   version: "1.0"
+
+license: MIT
+metadata:
+  author: Pier Luigi Fiorini
+  copyright: Copyright (c) 2026 Pier Luigi Fiorini
 ---
 
 # Dev Loop

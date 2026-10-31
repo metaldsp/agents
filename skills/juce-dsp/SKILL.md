@@ -4,6 +4,10 @@ description: >
   Implement and review real-time audio DSP in JUCE plugins and applications.
   Use for audio callbacks, processor lifecycle, parameter synchronization,
   and DSP stages. UI layout and styling are outside this skill's scope.
+license: MIT
+metadata:
+  author: Pier Luigi Fiorini
+  copyright: Copyright (c) 2026 Pier Luigi Fiorini
 ---
 
 # JUCE DSP

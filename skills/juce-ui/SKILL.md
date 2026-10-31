@@ -3,6 +3,10 @@ name: juce-ui
 description: >
   Apply JUCE UI layout and thread ownership conventions when creating, editing,
   or reviewing source/PluginEditor.{cpp,h} or source/UI/*.{cpp,h} in Saturator.
+license: MIT
+metadata:
+  author: Pier Luigi Fiorini
+  copyright: Copyright (c) 2026 Pier Luigi Fiorini
 ---
 
 # JUCE UI
